@@ -3,11 +3,11 @@
 # Run unit tests
 pytest
 
-#coverage tests
-coverage run -m pytest
+#Run unit test & coverage tests
+coverage run -m pytest tests/unit_test && coverage report
 
-# Run integration tests
-pytest tests/test_gui_integration.py
+# Run integration & coverage tests
+coverage run -m pytest tests/integration_test && coverage report
 
 # Exit with non-zero status if tests fail
 if [ $? -ne 0 ]; then
