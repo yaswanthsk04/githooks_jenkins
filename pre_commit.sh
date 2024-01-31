@@ -1,16 +1,16 @@
 #!/bin/bash
 
+# Exit the script if any command fails
+set -e
+
 # Run unit tests
 pytest
 
-#Run unit test & coverage tests
+# Run unit test & coverage tests
 coverage run -m pytest tests/unit_test && coverage report
 
 # Run integration & coverage tests
 coverage run -m pytest tests/integration_test && coverage report
 
-# Exit with non-zero status if tests fail
-if [ $? -ne 0 ]; then
-    echo "Tests failed. Commit aborted."
-    exit 1
-fi
+# If the script reaches this point, all tests have passed
+echo "All tests passed successfully."

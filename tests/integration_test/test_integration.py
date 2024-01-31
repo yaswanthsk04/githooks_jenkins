@@ -1,3 +1,10 @@
+import sys
+from pathlib import Path
+
+# Calculate the path to the root of the project (two levels up from this script)
+root_path = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(root_path))
+
 import pytest
 from calculator.basic_calc import add, subtract, multiply, divide
 from calculator.advanced_calc import square_root, power, logarithm
