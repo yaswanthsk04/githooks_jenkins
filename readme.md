@@ -1,2 +1,1 @@
-testing
-testing 234567
+removed pre_commit.sh
